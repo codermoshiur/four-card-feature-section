@@ -1,9 +1,208 @@
+/*
+fonts
+*/
+@font-face {
+  src: url("./assets/fonts/Poppins-ExtraLight.ttf");
+  font-family: Poppins-ExtraLight;
+}
+@font-face {
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+  font-family: Poppins-Regular;
+}
+@font-face {
+  src: url("./assets/fonts/Poppins-SemiBold.ttf");
+  font-family: Poppins-SemiBold;
+}
+/*
+css reset
+*/
+:root {
+  /* colors */
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+  --clr-blue: hsl(212, 86%, 64%);
+  --clr-very-dark-blue: hsl(234, 12%, 34%);
+  --clr-grayish-blue: hsl(229, 6%, 66%);
+  --clr-very-light-gray: hsl(0, 0%, 98%);
+  /* font-family */
+  --font-primary: "Poppins-Regular", sans-serif;
+  --font-secondary: "Poppins-SemiBold", serif;
+  --font-tertiary: "Poppins-ExtraLight", sans-serif;
+  /* font-size */
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2.25rem;
+  /*padding*/
+  --p-md: 1.75rem;
+  --p-lg: 2rem;
+  --p-xl: 5rem;
+  /*letter-spacing*/
+  --ls-xs: 0.0063rem;
+  --ls-sm: 0.0156rem;
+  /* border */
+  --b-xl: 0.2219rem;
+  /* border-radius */
+  --br-xl: 0.5rem;
+  /*line-height*/
+  --lh-body: 1.5;
+  /*gap*/
+  --g-xs: 1rem;
+  --g-sm: 1.5rem;
+  --g-md: 1.875rem;
+  --g-lg: 2.5rem;
+  --g-xl: 4rem;
+  --g-2xl: 4.75rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  color: var(--clr-grayish-blue);
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 
+end css reset 
+*/
+.container {
+  padding: var(--p-xl) var(--p-lg);
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--g-2xl);
+}
+.features-title {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  text-align: center;
+  gap: var(--g-xs);
+}
+.features-title h1 {
+  color: var(--clr-very-dark-blue);
+  font-size: var(--fs-lg);
+  font-family: var(--font-tertiary);
+  letter-spacing: var(--ls-sm);
+  line-height: 1.5;
+}
+.features-title h1 span {
+  font-family: var(--font-secondary);
+}
+.features-title p {
+  letter-spacing: var(--ls-xs);
+}
+.features-list {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+  gap: var(--g-md);
+}
+.features-list-item {
+  border-radius: var(--br-xl);
+  border-top: var(--b-xl) solid transparent;
+  padding: var(--p-md);
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--g-lg);
+  box-shadow: 0 0.9375rem 1.875rem -0.6875rem var(--clr-grayish-blue);
+  max-width: 23.4375rem;
+}
+.features-list-item img {
+  justify-self: end;
+}
+.features-list-item:nth-child(1) {
+  border-color: var(--clr-cyan);
+}
+.features-list-item:nth-child(2) {
+  border-color: var(--clr-red);
+}
+.features-list-item:nth-child(3) {
+  border-color: var(--clr-orange);
+}
+.features-list-item:nth-child(4) {
+  border-color: var(--clr-blue);
+}
+.features-list-item h2 {
+  color: var(--clr-very-dark-blue);
+  font-size: var(--fs-md);
+  font-family: var(--font-secondary);
+}
 .attribution {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: var(--fs-xs);
 }
-
 .attribution a {
-  color: #000;
-  font-weight: 500;
+  color: var(--clr-very-dark-blue);
+}
+@media screen and (min-width: 30.0625rem) {
+  .features-title h1 {
+    font-size: var(--fs-xl);
+  }
+  .features-title p {
+    max-width: 33.75rem;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .features-list {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (min-width: 64.0625rem) {
+  .container {
+    max-width: 69.375rem;
+    margin-inline: auto;
+    gap: var(--g-xl);
+  }
+  .features-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      ". team-builder ."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      ". karma .";
+  }
+  .features-list-item:nth-child(1) {
+    grid-area: supervisor;
+  }
+  .features-list-item:nth-child(2) {
+    grid-area: team-builder;
+  }
+  .features-list-item:nth-child(3) {
+    grid-area: karma;
+  }
+  .features-list-item:nth-child(4) {
+    grid-area: calculator;
+  }
 }

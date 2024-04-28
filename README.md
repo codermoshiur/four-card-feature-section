@@ -1,4 +1,4 @@
-# Frontend Mentor - Challange name
+# Frontend Mentor - Four card feature section
 
 ## Overview
 
@@ -6,11 +6,7 @@
 
 #### Desktop
 
-![](Screenshot)
-
-#### Mobile
-
-![](Screenshot)
+![](./design/desktop-design.png)
 
 ### Links
 
