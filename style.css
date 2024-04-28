@@ -111,13 +111,14 @@ end css reset
   gap: var(--g-xs);
 }
 .features-title h1 {
-  color: var(--clr-very-dark-blue);
+  color: var(--clr-grayish-blue);
   font-size: var(--fs-lg);
   font-family: var(--font-tertiary);
   letter-spacing: var(--ls-sm);
   line-height: 1.5;
 }
 .features-title h1 span {
+  color: var(--clr-very-dark-blue);
   font-family: var(--font-secondary);
 }
 .features-title p {
