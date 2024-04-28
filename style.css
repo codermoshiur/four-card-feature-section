@@ -27,7 +27,7 @@ css reset
   --clr-very-light-gray: hsl(0, 0%, 98%);
   /* font-family */
   --font-primary: "Poppins-Regular", sans-serif;
-  --font-secondary: "Poppins-SemiBold", serif;
+  --font-secondary: "Poppins-SemiBold", sans-serif;
   --font-tertiary: "Poppins-ExtraLight", sans-serif;
   /* font-size */
   --fs-xs: 0.8125rem;
