@@ -97,6 +97,9 @@ h6 {
 /* 
 end css reset 
 */
+#features {
+  background-color: var(--clr-very-light-gray);
+}
 .container {
   padding: var(--p-xl) var(--p-lg);
   display: grid;
